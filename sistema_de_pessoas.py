@@ -7,14 +7,10 @@ class cidadao():
     def __init__(self, nome, idade,cpf) -> None:
         self.nome = nome
         self.idade = idade
-        self.__cpf = cpf
+        self.cpf = cpf
 
     def __str__(self) -> str:
-        return f"""
-    aluno : {self.nome}
-    idade : {self.idade}
-    cpf : {self.__cpf}
-                """
+        return f"{self.__class__.__name__} : {', '.join([f'{chave} = {valor}' for chave, valor in self.__dict__.items()])})"
 
 
 
@@ -30,4 +26,5 @@ for x in range(num_pessoas):
 
 
 for ind in lista_pessoas:
+    print("=-"*20)
     print (ind)
